@@ -1,0 +1,52 @@
+# ---- 密钥与环境（切勿提交）----
+.env
+.env.*
+!.env.example
+*.token
+modal.toml
+.modal/
+
+# ---- 模型权重 / 大文件 ----
+*.safetensors
+*.ckpt
+*.pt
+*.pth
+*.gguf
+*.bin
+*.onnx
+
+# ---- 生成产物 ----
+*.mp4
+*.webm
+*.mov
+*.mkv
+*.gif
+*.png
+*.jpg
+output/
+input/
+temp/
+tmp/
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ---- 编辑器 / 系统 ----
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ---- 日志 ----
+*.log
+logs/
