@@ -1,0 +1,25 @@
+# ============================================================
+# 依赖说明
+#   逻辑上分两部分，但用一份文件管理更方便
+# ============================================================
+
+# ---- Modal 云端端点（modal/comfy_endpoint.py）----
+# 注意：ComfyUI 本身及其 torch 依赖由端点在 Modal 镜像里
+#       通过 `pip install -r ComfyUI/requirements.txt` 安装，
+#       不在本文件里声明。
+modal>=0.64
+fastapi>=0.110
+
+# ---- 模型下载（modal/download_models.py）----
+huggingface_hub>=0.23
+# hf_transfer 提供高速下载（下载脚本里已通过 image.env 开启 HF_HUB_ENABLE_HF_TRANSFER）
+
+# ---- 本地 ComfyUI 自定义节点（comfyui/modal_h3_node.py）----
+# requests / numpy / Pillow / torch / av 通常已随 ComfyUI 便携包提供。
+# 若环境缺失，按需安装：
+requests>=2.31
+numpy>=1.24
+Pillow>=10.0
+# av            # PyAV，视频探测与解码首选路径
+# opencv-python # 解码兜底路径之二
+# torch         # 由 ComfyUI 自带，不要在这里重复指定版本
